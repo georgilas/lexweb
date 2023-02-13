@@ -1,0 +1,116 @@
+<html>
+  <head>
+    <title>Greek Word Sum Calculator</title>
+    <style>
+      body {
+        margin: 5%;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+
+      p {
+        font-size: 1.5em;
+      }
+
+      input {
+        font-size: 1.5em;
+        padding: 5px;
+        width: 100%;
+      }
+
+      button {
+        font-size: 1.5em;
+        padding: 5px;
+        width: 100%;
+      }
+
+      @media only screen and (max-width: 600px) {
+        h1 {
+          font-size: 1.5em;
+        }
+
+        p {
+          font-size: 1em;
+        }
+
+        input {
+          font-size: 1em;
+        }
+
+        button {
+          font-size: 1em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Greek Word Sum Calculator</h1>
+    <p>Enter a Greek word and press "Calculate" to get the sum of its letters.</p>
+    <input type="text" id="input" placeholder="Greek word...">
+    <button type="button" onclick="calculateSum()">Calculate</button>
+    <p id="output"></p>
+
+    <script>
+      // Greek letter-to-number map
+      const letterMap = {
+        Α: 1,
+        Β: 2,
+        Γ: 3,
+        Δ: 4,
+        Ε: 5,
+        Ζ: 7,
+        Η: 8,
+        Θ: 9,
+        Ι: 10,
+        Κ: 20,
+        Λ: 30,
+        Μ: 40,
+        Ν: 50,
+        Ξ: 60,
+        Ο: 70,
+        Π: 80,
+        Ρ: 100,
+        Σ: 200,
+        Τ: 300,
+        Υ: 400,
+        Φ: 500,
+        Χ: 600,
+        Ψ: 700,
+        Ω: 800
+      };
+
+      // Calculate the sum of a given Greek word
+      function calculateSum() {
+        // Get the word from the input
+        const word = document.getElementById('input').value;
+
+        // If no word is given, display an error
+        if (word === '') {
+          document.getElementById('output').innerHTML = 'Please enter a Greek word.';
+          return;
+        }
+
+        // Initialize the sum
+        let sum = 0;
+
+        // Iterate through each letter of the word
+        for (let i = 0; i < word.length; i++) {
+          // Get the letter
+          const letter = word[i];
+
+          // If it is a Greek letter, add its value to the sum
+          if (letterMap[letter] !== undefined) {
+            sum += letterMap[letter];
+          }
+        }
+
+        // Display the sum
+        document.getElementById('output').innerHTML = `The sum of the letters in '${word}' is 
+${sum}.`;
+      }
+    </script>
+  </body>
+</html>
+
