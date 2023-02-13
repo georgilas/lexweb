@@ -36,5 +36,4 @@ For example, the Greek word ΑΝΗΡ ('man' in English) gives 1+50+8+100=159.
 Now, write a complete web application, that inputs a Greek word and returns the sum of its letters. Display the result immediately after the user types letters. If he types spaces or numbers, ignore them.
 ```
 
-It made a simple web app for me.
-[URL](https://lexweb.surge.sh/)
+It made a simple web app for me (<https://lexweb.surge.sh/>).
